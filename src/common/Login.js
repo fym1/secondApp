@@ -36,7 +36,7 @@ export default class Login extends Component {
         console.log(res);
         console.log(res.data.username);
         console.log(res.data.pwd);
-        if(res.data.username == 'fym' && res.data.pwd == '111111'){
+        if(res.data.username !== 'fym' && res.data.pwd !== '111111'){
           AsyncStorage.setItem('user',JSON.stringify(res.data))
             .then(()=>{
               this.setState({isloading:false})
@@ -65,12 +65,6 @@ export default class Login extends Component {
       //     console.log(res);
       //     Actions.homePage()
       //   })
-    }
-    componentDidMount(){
-      AsyncStorage.getItem('user')
-        .then(res=>console.log(res))
-      AsyncStorage.getItem('isInstall')
-        .then(res=>console.log(res))
     }
     render() {
         return (

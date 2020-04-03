@@ -62,7 +62,7 @@ const App = () => {
   return (
     <Router style={{backgroundColor:'#ccc'}}
       backAndroidHandler={()=>{
-        if(Actions.currentScene == 'login' || Actions.currentScene == 'register'){
+        if(Actions.currentScene == 'login'){
           if(new Date().getTime()-now<2000){
             BackHandler.exitApp();
           }else{
